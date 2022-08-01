@@ -1,0 +1,114 @@
+@use "partials/mixins.scss";
+@use "partials/colors";
+
+
+
+body{
+    @include mixins.flex-centre;
+    flex-direction: column;
+    background-color: colors.$grey;
+}
+.image{
+    width:70%;
+    @include mixins.flex-evenly;
+    margin-bottom: 40px;
+    &__img{
+        width:200px;
+    }
+    &__title{
+        color:colors.$darkBlue;
+        font-family: 'Square Peg', cursive;
+        font-size: 100px;
+    }
+}
+.books{
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+    width:70%;
+    margin: auto;
+}
+.book{
+    border:2px solid colors.$darkBlue;
+    color:colors.$darkBlue;
+    border-radius: 20px;
+    padding:20px;
+    &__img{
+        padding:20px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width:400px;
+    }
+    &__title{
+        text-align: center;
+        color:colors.$darkBlue;
+    }
+    &__author{
+        font-weight: bold;
+    }
+    &__description{
+        // color:colors.$lightBlue;
+    }
+}
+
+.bookForm{
+    @include mixins.flex-around;
+    &__input input{
+        font-size: 28px;
+        color:colors.$darkBlue;
+        text-align: center;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        border-bottom: 2px solid colors.$darkBlue;
+        margin-right: 50px;
+        &:active{
+            border:none
+        }
+    }
+    &__btn{
+        font-size: 28px;
+        color:colors.$darkBlue;
+        padding:10px 20px;
+        border:2px solid colors.$darkBlue;
+        border-radius: 10px;
+    }
+}
+
+
+.inputText{
+    position:relative;
+    &__searchBlock{
+        position: absolute;
+        background-color: colors.$grey;
+        width:fit-content;
+        top: 100%;
+        z-index: 9;
+        // border:2px solid colors.$darkBlue;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+
+.searchBlock{
+    @include mixins.flex-column;
+    z-index: 10;
+    &__btn{
+        margin:10px;
+        font-size: 24px;
+        border:none;
+        background-color: transparent;
+        color:colors.$darkBlue;
+        border-bottom: 1px solid colors.$darkBlue;
+        transition:all 1s;
+        &:hover{
+            background-color: colors.$darkBlue;
+            color:colors.$grey;
+        }
+    }
+}
+span{
+    background-color:red;
+}

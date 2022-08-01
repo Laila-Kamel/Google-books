@@ -1,0 +1,115 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #E0E0E0;
+}
+
+.image {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.image__img {
+  width: 200px;
+}
+.image__title {
+  color: #0238D5;
+  font-family: "Square Peg", cursive;
+  font-size: 100px;
+}
+
+.books {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+  width: 70%;
+  margin: auto;
+}
+
+.book {
+  border: 2px solid #0238D5;
+  color: #0238D5;
+  border-radius: 20px;
+  padding: 20px;
+}
+.book__img {
+  padding: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+}
+.book__title {
+  text-align: center;
+  color: #0238D5;
+}
+.book__author {
+  font-weight: bold;
+}
+.bookForm {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.bookForm__input input {
+  font-size: 28px;
+  color: #0238D5;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #0238D5;
+  margin-right: 50px;
+}
+.bookForm__input input:active {
+  border: none;
+}
+.bookForm__btn {
+  font-size: 28px;
+  color: #0238D5;
+  padding: 10px 20px;
+  border: 2px solid #0238D5;
+  border-radius: 10px;
+}
+
+.inputText {
+  position: relative;
+}
+.inputText__searchBlock {
+  position: absolute;
+  background-color: #E0E0E0;
+  width: fit-content;
+  top: 100%;
+  z-index: 9;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.searchBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  z-index: 10;
+}
+.searchBlock__btn {
+  margin: 10px;
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  color: #0238D5;
+  border-bottom: 1px solid #0238D5;
+  transition: all 1s;
+}
+.searchBlock__btn:hover {
+  background-color: #0238D5;
+  color: #E0E0E0;
+}
+
+span {
+  background-color: red;
+}

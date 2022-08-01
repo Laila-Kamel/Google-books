@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./modules/script.js" type="module" defer></script>
+    <title>Google-Books</title>
+  </head>
+  <body>
+    <div class="image">
+      <img src="images/logo.ico" class="image__img" />
+      <h1 class="image__title">Google Books</h1>
+    </div>
+    <div id="form" class="form">
+      <form id="bookForm" class="bookForm">
+        <div class="bookForm__input inputText">
+          <input
+            name="book"
+            type="text"
+            class="inputText__input"
+            required
+          />
+          <div class="inputText__searchBlock searchBlock">
+            
+          </div>
+        </div>
+        <input
+          type="submit"
+          class="bookForm__btn"
+          value="Search"
+          id="submitBtn"
+        />
+      </form>
+    </div>
+    <div class="books" id="books"></div>
+  </body>
+</html>
