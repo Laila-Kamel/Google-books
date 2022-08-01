@@ -1,6 +1,6 @@
 @use "partials/mixins.scss";
 @use "partials/colors";
-
+@use "partials/devices";
 
 
 body{
@@ -28,12 +28,19 @@ body{
     grid-gap: 25px;
     width:70%;
     margin: auto;
+    @include devices.tablet-landscape{
+        grid-template-columns: 1fr;
+    }
 }
 .book{
     border:2px solid colors.$darkBlue;
     color:colors.$darkBlue;
     border-radius: 20px;
     padding:20px;
+    @include devices.tablet-landscape{
+        width:90%;
+        margin: auto;
+    }
     &:hover{
         cursor: pointer;
     }
@@ -58,6 +65,9 @@ body{
 
 .bookForm{
     @include mixins.flex-around;
+    @include devices.tablet-landscape{
+        @include mixins.flex-column;
+    }
     &__input input{
         font-size: 28px;
         color:colors.$darkBlue;
@@ -77,6 +87,9 @@ body{
         padding:10px 20px;
         border:2px solid colors.$darkBlue;
         border-radius: 10px;
+        @include devices.phone{
+            margin:20px;
+        }
     }
 }
 
