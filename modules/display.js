@@ -6,7 +6,7 @@ const bks = document.getElementById("books");
 const searchBlock = document.querySelector(".inputText__searchBlock");
 
 export const getBooksInfo = async (bkName) => {
-  bkName = bkName.split(" ").join("+");
+  // bkName = bkName.split(" ").join("+");
   console.log(bkName);
   const response = await fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${bkName}+intitle:${bkName}`
@@ -125,7 +125,8 @@ export const booksInformationOnClick=()=>{
       
       console.log(e.target.parentElement.id);
       let bookID=e.target.parentElement.id;
-      getBookById(bookID).then(displayBookByID)
+      // getBookById(bookID).then(displayBookByID)
+      displayBookByID(bookID)
     });
   }
 }
