@@ -1,17 +1,20 @@
-import getBooksInfo from "./display.js"
+import getBooksInfo, { displayBookByID, getBookById } from "./display.js"
 import searchWord from "./search.js"
-import { displayBooks,displayTitles} from "./display.js";
+import { displayBooks,displayTitles,booksInformationOnClick} from "./display.js";
 
 const form = document.getElementById("bookForm");
 const books = document.getElementById("books");
 let inputField = document.querySelector(".inputText__input");
 const searchBlock=document.querySelector(".inputText__searchBlock");
+const submitBtn=document.getElementById("submitBtn")
+
+// const booksCards=document.querySelectorAll(".book__title");
 
 const display=async(bName)=>{
-  const data= await getBooksInfo(bName);
-  return displayBooks(data);
+  // const data= await getBooksInfo(bName);
+  return displayBooks(bName);
 }
-display("potter");
+display("potter").then(book=>booksInformationOnClick(book))
 
 
 form.addEventListener("submit", (e) => {
@@ -29,18 +32,22 @@ if(booksDisplayedArr>1){
   }
   // books.removeChild(books.children);
 }
-  getBooksInfo(bookName).then(books=>displayBooks(books))
+  // getBooksInfo(bookName).then(books=>displayBooks(books))
+  displayBooks(bookName);
 });
 
 let searchWd="";
   inputField.addEventListener("keyup",()=>{
+  
     searchWd=inputField.value;
     console.log(searchWd);
    while(searchBlock.firstChild){
     searchBlock.removeChild(searchBlock.firstChild)
    }
-    getBooksInfo(searchWd).then(data=>displayTitles(data)).then(putSelectedTitleInInputField)
-  
+   searchBlock.style.display="flex";
+    // getBooksInfo(searchWd).then(data=>displayTitles(data)).then(putSelectedTitleInInputField)
+  // displayTitles(searchWd).then(putSelectedTitleInInputField)
+  displayTitles(searchWd).then(putSelectedTitleInInputField).catch((error)=>alert("Please enter a valid search query"))
   });
 
 const putSelectedTitleInInputField=()=>{
@@ -53,16 +60,11 @@ const putSelectedTitleInInputField=()=>{
 // // let matchingWrd=searchWd.match(/('+searchWd+'),gi/)
 // let matchingWrd=searchWd.match(regextest)
 
-// console.log(matchingWrd);
 //     blkBtnText[i].innerHTML= blkBtnText[i].innerHTML.replace(searchWd,`<span>${searchWd}</span>`);
     
 //     blkBtnText[i].innerHTML= blkBtnText[i].innerHTML.replace(searchWdUpper,`<span>${searchWdUpper}</span>`);
 
 //     blkBtnText[i].innerHTML= blkBtnText[i].innerHTML.replace(matchingWrd,`<span>${matchingWrd}</span>`);
-
- 
-
-//     console.log(blkBtnText[i].innerHTML);
 
   blkBtnText[i].addEventListener("click",(e)=>{
     console.log(e.target.innerHTML); 
@@ -70,9 +72,16 @@ const putSelectedTitleInInputField=()=>{
     inputField.value="";
     inputField.value=e.target.innerHTML;
     searchBlock.style.display="none";
-    getBooksInfo(/(`${inputField.value}`)/).then(data=>displayTitles(data))
+    // getBooksInfo(/(`${inputField.value}`)/).then(data=>displayTitles(data))
+    // displayTitles(`${inputField.value}`)
+    // submitBtn.addEventListener("click",()=>{
+    //   const newValue=inputField.value.split(" ").join("+")
+    //   console.log(newValue);
+    // })
     })
     
 }
 }
+
+
 

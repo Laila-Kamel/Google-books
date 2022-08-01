@@ -1,5 +1,5 @@
 
-export const createDiv=(divClassName,parent,id)=>{
+export const createDiv=(divClassName,parent,id,)=>{
     const divel=document.createElement("div");
     // const element=document.createElement(type);
     // const text=document.createTextNode(str);
@@ -8,6 +8,8 @@ export const createDiv=(divClassName,parent,id)=>{
     // parent.appendChild(element);
     
     divel.classList.add(divClassName)
+    divel.setAttribute('data-bs-toggle',"modal")
+    divel.setAttribute('data-bs-target',"#exampleModal")
     divel.id=id;
     parent.appendChild(divel);
 }

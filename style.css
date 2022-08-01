@@ -37,6 +37,9 @@ body {
   border-radius: 20px;
   padding: 20px;
 }
+.book:hover {
+  cursor: pointer;
+}
 .book__img {
   padding: 20px;
   position: relative;
