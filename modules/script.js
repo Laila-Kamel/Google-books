@@ -6,7 +6,6 @@ const form = document.getElementById("bookForm");
 const books = document.getElementById("books");
 let inputField = document.querySelector(".inputText__input");
 const searchBlock=document.querySelector(".inputText__searchBlock");
-const submitBtn=document.getElementById("submitBtn")
 
 // const booksCards=document.querySelectorAll(".book__title");
 
@@ -28,11 +27,10 @@ const booksDisplayedArr=books.childNodes.length;
 if(booksDisplayedArr>1){
   console.log(books.hasChildNodes());
   while(books.firstChild){
-    books.removeChild(books.firstChild)
+    // books.removeChild(books.firstChild)
+    books.innerHTML='';
   }
-  // books.removeChild(books.children);
 }
-  // getBooksInfo(bookName).then(books=>displayBooks(books))
   displayBooks(bookName);
 });
 
@@ -45,8 +43,6 @@ let searchWd="";
     searchBlock.removeChild(searchBlock.firstChild)
    }
    searchBlock.style.display="flex";
-    // getBooksInfo(searchWd).then(data=>displayTitles(data)).then(putSelectedTitleInInputField)
-  // displayTitles(searchWd).then(putSelectedTitleInInputField)
   displayTitles(searchWd).then(putSelectedTitleInInputField).catch((error)=>alert("Please enter a valid search query"))
   });
 
@@ -72,12 +68,6 @@ const putSelectedTitleInInputField=()=>{
     inputField.value="";
     inputField.value=e.target.innerHTML;
     searchBlock.style.display="none";
-    // getBooksInfo(/(`${inputField.value}`)/).then(data=>displayTitles(data))
-    // displayTitles(`${inputField.value}`)
-    // submitBtn.addEventListener("click",()=>{
-    //   const newValue=inputField.value.split(" ").join("+")
-    //   console.log(newValue);
-    // })
     })
     
 }
