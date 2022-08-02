@@ -35,6 +35,16 @@ body {
     grid-template-columns: 1fr;
   }
 }
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .books {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .books {
+    grid-template-columns: 1fr;
+  }
+}
 
 .book {
   border: 2px solid #0238D5;
@@ -43,6 +53,18 @@ body {
   padding: 20px;
 }
 @media only screen and (min-width: 769px) and (max-width: 992px) {
+  .book {
+    width: 90%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .book {
+    width: 90%;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
   .book {
     width: 90%;
     margin: auto;
@@ -65,12 +87,27 @@ body {
 .book__author {
   font-weight: bold;
 }
+
 .bookForm {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 @media only screen and (min-width: 769px) and (max-width: 992px) {
+  .bookForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .bookForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+  }
+}
+@media only screen and (max-width: 576px) {
   .bookForm {
     display: flex;
     flex-direction: column;
@@ -98,6 +135,16 @@ body {
   border-radius: 10px;
 }
 @media only screen and (max-width: 576px) {
+  .bookForm__btn {
+    margin: 20px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .bookForm__btn {
+    margin: 20px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
   .bookForm__btn {
     margin: 20px;
   }

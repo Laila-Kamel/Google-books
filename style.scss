@@ -31,6 +31,12 @@ body{
     @include devices.tablet-landscape{
         grid-template-columns: 1fr;
     }
+    @include devices.tablet{
+        grid-template-columns: 1fr;
+    }
+    @include devices.phone{
+        grid-template-columns: 1fr;
+    }
 }
 .book{
     border:2px solid colors.$darkBlue;
@@ -38,6 +44,14 @@ body{
     border-radius: 20px;
     padding:20px;
     @include devices.tablet-landscape{
+        width:90%;
+        margin: auto;
+    }
+    @include devices.phone{
+        width:90%;
+        margin: auto;
+    }
+    @include devices.tablet{
         width:90%;
         margin: auto;
     }
@@ -58,14 +72,17 @@ body{
     &__author{
         font-weight: bold;
     }
-    &__description{
-        // color:colors.$lightBlue;
-    }
 }
 
 .bookForm{
     @include mixins.flex-around;
     @include devices.tablet-landscape{
+        @include mixins.flex-column;
+    }
+    @include devices.tablet{
+        @include mixins.flex-column;
+    }
+    @include devices.phone{
         @include mixins.flex-column;
     }
     &__input input{
@@ -90,6 +107,12 @@ body{
         @include devices.phone{
             margin:20px;
         }
+        @include devices.tablet{
+            margin:20px;
+        }
+        @include devices.tablet-landscape{
+            margin:20px;
+        }
     }
 }
 
@@ -102,7 +125,6 @@ body{
         width:fit-content;
         top: 100%;
         z-index: 9;
-        // border:2px solid colors.$darkBlue;
         border-radius: 5px;
         margin-top: 10px;
     }
