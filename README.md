@@ -11,8 +11,8 @@ This project uses both DOM manipulation and Asynchronous programming.
 The aim of the project is to create an application that allows users to search for books by title inside the Google Books database and to be able to get more details about a certain title.
 
 ##  Setup
-I used Google Books API to get the books data.
-I used bootstrp create a modal for each book that pops up when the user clicks on a book card.
+- I used Google Books API to get the books data.
+- I used bootstrap to create a modal for each book that pops up when the user clicks on a book card.
 
 ## Description
 
